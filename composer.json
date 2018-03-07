@@ -1,0 +1,10 @@
+{
+    "name": "opushive/wp-client-push",
+    "description": "A plugin with hooks that allow users to send notification to clients",
+    "type": "wordpress-plugin",
+    "require": {
+        "minishlink/web-push": "^2.0"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}
