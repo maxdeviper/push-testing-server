@@ -18,21 +18,14 @@ switch ($method) {
         break;
     case 'POST':
         // create a new subscription entry in your database (endpoint is unique)
-        $subs = json_decode(file_get_contents(__DIR__.'/user-subscription.json'));
-        if (isset($subs) && !empty($subs) && is_array($subs)) {
-            array_push($subs, $subscription);
-    } else {
-        $subs = [];
-        array_push($subs, $subscription);
-    }
-    file_put_contents('user-subscription.json', json_encode($subs));
-    if (!isset($subscription['endpoint'])) {
-        http_response_code(404);
-        echo 'Error: not a subscription';
-        return;
-    }
-    header("Content-Type", "application/json");
-    echo json_encode(["message" => "succesfully saved", "" => $subscription]);
+        if (!isset($subscription['endpoint'])) {
+            http_response_code(404);
+            echo 'Error: not a subscription';
+            return;
+        }
+        file_put_contents('user-subscription.json', json_encode($subscription));
+        header("Content-Type", "application/json");
+        echo json_encode(["message" => "succesfully saved", "" => $subscription]);
     break;
 case 'PUT':
     // update the key and token of subscription corresponding to the endpoint
