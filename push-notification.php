@@ -12,8 +12,8 @@ $data = json_decode(file_get_contents('php://input'), true);
 $auth = array(
 'VAPID' => array(
         'subject' => 'mailto:mxvmayaki@gmail.com',
-        'publicKey' => 'BG6ChZkawbaTnO7YVltnGcMkkP-B4cWN4en2ZgP6aEoZUomRYHH1FNuasGIJ_laAGAa2Q6m7NMerllSywW-1nw4',
-        'privateKey' => 'BChgLlEoDeBMt_V2tIAUoqG_ZWrHdgJ5RUNqpVDet7c', // in the real world, this would be in a secret file
+        'publicKey' => '',
+        'privateKey' => '', // in the real world, this would be in a secret file
     ),
 );
 

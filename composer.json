@@ -6,5 +6,10 @@
         "minishlink/web-push": "^2.0"
     },
     "license": "MIT",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "./FcmPusher.php"
+        ]
+    }
 }
